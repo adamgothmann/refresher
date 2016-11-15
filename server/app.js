@@ -18,3 +18,7 @@ app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'), function(){
   console.log('on port', app.get('port'));
 });
+
+var addInput = require('../server/routes/addThing.js');
+
+app.use('/addInput', addInput);

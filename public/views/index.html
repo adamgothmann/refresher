@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='myApp'>
   <head>
     <meta charset="utf-8">
     <title>getting back into things</title>
     <link rel="shortcut icon" href="">
+    <script src="/vendors/angular.min.js" charset="utf-8"></script>
     <script src="/scripts/script.js" charset="utf-8"></script>
   </head>
-  <body>
-    <p>
-      test
-    </p>
+  <body ng-controller="mainController">
+    <h2>Enter something here</h2>
+    <input ng-model="info" type="text" name="name" value="">
+    <button ng-click="input()" type="button" name="button">enter</button>
   </body>
 </html>
