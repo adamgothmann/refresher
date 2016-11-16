@@ -8,8 +8,15 @@ myApp.controller('mainController', ['$scope', '$http', function($scope, $http){
     };
     $http({
       method: 'POST',
-      url: 'addInput',
+      url: '/addInput',
       data: sending
+    });
+    $http({
+      method: 'GET',
+      url: '/addInput'
+    }).then(function(response){
+      $scope.allThings = response.data;
+      console.log($scope.allThings);
     });
   };
 }]);

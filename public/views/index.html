@@ -11,5 +11,8 @@
     <h2>Enter something here</h2>
     <input ng-model="info" type="text" name="name" value="">
     <button ng-click="input()" type="button" name="button">enter</button>
+    <p ng-repeat="thing in allThings">
+      {{thing.thing}}
+    </p>
   </body>
 </html>

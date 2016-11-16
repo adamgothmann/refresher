@@ -16,4 +16,20 @@ router.post('/', function(req, res){
   });
 });
 
+router.get('/', function(req, res){
+  console.log('in GET');
+  pg.connect(connection, function(err, client, done){
+    var results = [];
+    var query = client.query('SELECT * from test');
+    query.on('row', function(row){
+      results.push(row);
+    });
+    query.on('end', function(){
+      done();
+      res.send(results);
+    });
+    console.log('results', results);
+  });
+});
+
 module.exports = router;
